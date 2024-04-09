@@ -9,10 +9,11 @@ ENV PATH ${WORKDIR}/node_modules/.bin:$PATH
 # install app dependencies
 COPY package.json ./
 COPY package-lock.json ./
-ADD app app/
 
 RUN npm install
 #RUN npm run dev
+
+ADD app app/
 RUN npm run build
 
 # start app
